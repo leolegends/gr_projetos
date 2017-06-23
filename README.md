@@ -1,3 +1,3 @@
-# Gerenciado de Projetos
+# Gerenciador de Projetos
 
 ### Sistema ainda em desenvolvimento.
