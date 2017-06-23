@@ -37,9 +37,36 @@
 							</div>
 						</div>
 						<div class="row">
-							<div style="margin-left: 1cm;">
-								<p>Inicio do Projeto</p>	
-							</div>
+							    <div class='col m2'>
+								<div style="margin-left: 1cm;">
+									<i class="material-icons" style="font-size: 100px;">add_circle</i>
+									<p class='fonte'>Inicio do Projeto</p>
+								</div>
+							 </div>
+							    <div class='col m2'>
+								<div style="margin-left: 1cm;">
+									<i class="material-icons" style="font-size: 100px;">trending_flat</i>
+									<p class='fonte'>Inicio do Projeto</p>
+								</div>
+							 </div>
+							    <div class='col m2'>
+								<div style="margin-left: 1cm;">
+									<i class="material-icons" style="font-size: 100px;">trending_flat</i>
+									<p class='fonte'>Inicio do Projeto</p>
+								</div>
+							 </div>
+							    <div class='col m2'>
+								<div style="margin-left: 1cm;">
+									<i class="material-icons" style="font-size: 100px;">trending_flat</i>
+									<p class='fonte'>Inicio do Projeto</p>
+								</div>
+							 </div>
+							    <div class='col m2'>
+								<div style="margin-left: 1cm;">
+									<i class="material-icons" style="font-size: 100px;">trending_flat</i>
+									<p class='fonte'>Inicio do Projeto</p>
+								</div>
+							 </div>
 						</div>
 					</div>
 			</div>
