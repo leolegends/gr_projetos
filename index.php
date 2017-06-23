@@ -39,32 +39,38 @@
 						<div class="row">
 							    <div class='col m2'>
 								<div style="margin-left: 1cm;">
-									<i class="material-icons" style="font-size: 100px;">add_circle</i>
-									<p class='fonte'>Inicio do Projeto</p>
+									<i class="material-icons" style="font-size: 70px;">add_circle</i>
+									<p>Inicio do Projeto</p>
 								</div>
 							 </div>
 							    <div class='col m2'>
 								<div style="margin-left: 1cm;">
-									<i class="material-icons" style="font-size: 100px;">trending_flat</i>
-									<p class='fonte'>Inicio do Projeto</p>
+									<i class="material-icons" style="font-size: 70px;">gesture</i>
+									<p>Em Análise</p>
 								</div>
 							 </div>
 							    <div class='col m2'>
 								<div style="margin-left: 1cm;">
-									<i class="material-icons" style="font-size: 100px;">trending_flat</i>
-									<p class='fonte'>Inicio do Projeto</p>
+									<i class="material-icons" style="font-size: 70px;">bubble_charts</i>
+									<p>Desenvolvimento</p>
 								</div>
 							 </div>
 							    <div class='col m2'>
 								<div style="margin-left: 1cm;">
-									<i class="material-icons" style="font-size: 100px;">trending_flat</i>
-									<p class='fonte'>Inicio do Projeto</p>
+									<i class="material-icons" style="font-size: 70px;">settings</i>
+									<p>Correções</p>
 								</div>
 							 </div>
 							    <div class='col m2'>
 								<div style="margin-left: 1cm;">
-									<i class="material-icons" style="font-size: 100px;">trending_flat</i>
-									<p class='fonte'>Inicio do Projeto</p>
+									<i class="material-icons" style="font-size: 70px;">thumb_up</i>
+									<p>Aprovação</p>
+								</div>
+							 </div>
+							    <div class='col m2'>
+								<div style="margin-left: 0.5cm;">
+									<i class="material-icons" style="font-size: 70px;">check_circle</i>
+									<p>Entrega</p>
 								</div>
 							 </div>
 						</div>
