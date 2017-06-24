@@ -64,7 +64,25 @@ padding-top: 80px;
 min-height: 720px;
 }
 
+.corpo {
+  background-color: #263238;
+  opacity: 0.7;
+  color: white; 
+}
+
 h1, h2, h3, h4, h5, h6{
 font-weight: 100;
+}
 
+.title {
+  background-color: #039be5;
+  color: white;
+  opacity: 0.9;
+  width: 2cm;
+  border-radius: 20px;
+  box-shadow: 0px 20px 50px #039be5;
+}
+
+.altura_div {
+  margin-top: 2.5cm;
 }
