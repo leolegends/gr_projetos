@@ -35,7 +35,7 @@
 				<div class="col m2"
 				>
 					<label class="fonte">Prazo do Projeto (dias)</label>
-					<input class="fonte" type="number" name="pj_prazo" id="pj_prazo" required>
+					<input class="fonte" type="number" name="pj_prazo" id="pj_prazo" maxlenght="3" required>
 					<label class="fonte" id="projeto_label"></label>
 				</div>
 			</div>
@@ -47,7 +47,27 @@
 			</div>
 
 			</form>
-
+			</div>
+			<div class="row" style="background-color: white; height: 1cm;">
+			<center>
+				
+			</center>
+			</div>
+			<div class='container'>
+	<!-- Formulário de busca -->
+			<form action="index.php" method="post">
+				<div class="row">
+					<div class="col m6">
+						<label class='fonte'>
+							Localizar Projeto:
+						</label>
+						<input class='fonte' type="text" name="pj_localizar">
+					</div>
+					<div class='col m6' style="margin-top: 0.6cm;">
+						<button class="btn waves blue-grey darken-4">Localizar</button>
+					</div>
+				</div>
+			</form>
 
 
 
