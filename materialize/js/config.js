@@ -9,7 +9,13 @@ $(document).ready(function(){
 	$("#aprovado").hide().show(3000);
 	$("#entregue").hide().show(3500);
 	$("#title_cadastro").hide().fadeIn(3000);
-	
+	$(".corpo2").hide();
+	$("#localizar").click(function(){
+
+		$(".corpo2").show(1000);
+
+	});
+
 	$("#pj_prazo").keyup(function(){
 
 	if(!parseInt($(this).val())) {
@@ -18,7 +24,7 @@ $(document).ready(function(){
 
 	if ($(this).val() > 31){
 		
-		$("#projeto_label").html("<p id='pjlb' style= font-size: 34px; font-weight: bold; color: white;'>Projeto com mais de 30 dias!</p>");	
+		$("#projeto_label").html("<p id='pjlb' style= font-size: 34px; color:white;>Maior que 31 dias!</p>");	
 		$("#pjlb").hide().fadeIn(1000);
 	}else{
 		$("#projeto_label").html("");

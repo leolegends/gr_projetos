@@ -36,7 +36,7 @@
 				>
 					<label class="fonte">Prazo do Projeto (dias)</label>
 					<input class="fonte" type="number" name="pj_prazo" id="pj_prazo" maxlenght="3" required>
-					<label class="fonte" id="projeto_label"></label>
+					<b class="fonte" id="projeto_label"></b>
 				</div>
 			</div>
 			<div class="row">
@@ -50,9 +50,10 @@
 			</div>
 			<div class="row" style="background-color: white; height: 1cm;">
 			<center>
-				
+				<button id="localizar" class="btn-flat waves" style='color: green;'>Buscar projeto</button>
 			</center>
 			</div>
+			<div class="corpo2">
 			<div class='container'>
 	<!-- Formulário de busca -->
 			<form action="index.php" method="post">
@@ -71,5 +72,6 @@
 
 
 
+		</div>
 		</div>
 	</body>
