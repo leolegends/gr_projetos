@@ -10,8 +10,9 @@ $(document).ready(function(){
 	$("#entregue").hide().show(3500);
 	$("#title_cadastro").hide().fadeIn(3000);
 	$(".corpo2").hide();
+	
 	$("#localizar").click(function(){
-
+		
 		$(".corpo2").show(1000);
 
 	});
