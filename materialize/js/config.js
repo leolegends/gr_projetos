@@ -8,7 +8,7 @@ $(document).ready(function(){
 	$("#corrigindo").hide().show(2500);
 	$("#aprovado").hide().show(3000);
 	$("#entregue").hide().show(3500);
-
+	$("#title_cadastro").hide().fadeIn(3000);
 	
 	$("#pj_prazo").keyup(function(){
 
@@ -23,9 +23,6 @@ $(document).ready(function(){
 			$(this).val("");
 		}
 	}
-
-	console.log($(this).val());
-
 
 	});
 	

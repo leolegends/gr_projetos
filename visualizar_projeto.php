@@ -17,6 +17,7 @@ if ($start == "start"){
 	<head>
 		<title>GR Projetos</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=600, initial-scale=1">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css">
 		<link rel="stylesheet" type="text/css" href="materialize/css/style.css">

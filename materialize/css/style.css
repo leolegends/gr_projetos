@@ -87,3 +87,12 @@ font-weight: 100;
 .altura_div {
   margin-top: 2.5cm;
 }
+
+.cadastro_title {
+  background-color: black;
+  color: white;
+}
+
+.fonte {
+  color: white;
+}
