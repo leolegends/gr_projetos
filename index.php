@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="materialize/js/config.js"></script>
 
 	</head>
-	<body>
+	<body class="corpo">
 		<div class="container">
 			<div class="row">
 				<div class="col m12 center">
@@ -34,7 +34,7 @@
 				<div class="col m2"
 				>
 					<label>Prazo do Projeto (dias)</label>
-					<input type="number" name="pj_prazo" required>
+					<input type="number" name="pj_prazo" id="pj_prazo" required>
 				</div>
 			</div>
 			<div class="row">
