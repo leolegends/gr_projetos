@@ -17,11 +17,11 @@ $(document).ready(function(){
 	}
 
 	if ($(this).val() > 31){
-		var p = confirm("Tem certeza que seu projeto terá mais que 31 dias?");
 		
-		if (p == false){
-			$(this).val("");
-		}
+		$("#projeto_label").html("<p id='pjlb' style= font-size: 34px; font-weight: bold; color: white;'>Projeto com mais de 30 dias!</p>");	
+		$("#pjlb").hide().fadeIn(1000);
+	}else{
+		$("#projeto_label").html("");
 	}
 
 	});

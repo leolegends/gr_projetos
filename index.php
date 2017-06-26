@@ -36,6 +36,7 @@
 				>
 					<label class="fonte">Prazo do Projeto (dias)</label>
 					<input class="fonte" type="number" name="pj_prazo" id="pj_prazo" required>
+					<label class="fonte" id="projeto_label"></label>
 				</div>
 			</div>
 			<div class="row">
