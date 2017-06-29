@@ -135,14 +135,15 @@ if ($start == "start"){
 				</div>
 					<div class="container">
 						<div class="row">
-						<form>
+						<form method="post">
 							<div class="col m4">
 								<p>Nome:</p>
 								<input type="text" name="comentario_nome">
 							</div>
 						
-							<div class="col m4">
-								<select class="input-field">
+							<div class="col m4 right">
+							<p>Status de Projeto </p>
+								<select class="browser-default" name="status_nome">
 									<option>123</option>
 									<option>321</option>
 								</select>
