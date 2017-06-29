@@ -75,17 +75,15 @@ font-weight: 100;
 }
 
 .title {
-  background-color: #039be5;
+  background-color: #0d47a1;
   color: white;
-  opacity: 0.9;
-  width: 2cm;
-  border-radius: 20px;
+  width: 1cm;
 /*  box-shadow: 0px 20px 50px #039be5;
 */
 }
 
 .altura_div {
-  margin-top: 2.5cm;
+  margin-top: 1.5cm;
 }
 
 .cadastro_title {
@@ -96,6 +94,15 @@ font-weight: 100;
 .fonte {
   color: white;
 }
-.corpo2 {
 
+.prazo {
+  text-align: center;
+  margin-top: -0.6cm;
+  background-color: #0d47a1;
+  color: white; 
 }
+
+#prazo {
+  font-size: 22px;
+}
+

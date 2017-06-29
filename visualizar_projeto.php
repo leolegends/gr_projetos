@@ -5,7 +5,6 @@ extract($_REQUEST);
 if ($start == "start"){
 
 
-	echo "botao apertado";
 
 
 
@@ -26,24 +25,23 @@ if ($start == "start"){
 		<script type="text/javascript" src="materialize/js/config.js"></script>
 	</head>
 		<body class="corpo">
-			<div class="container" style="border-style: black;">
-			<div class="row">
+			<div class="row cadastro_title">
 				<div class="col m12 s12">
 					<center>
-						<h1>Gerenciamento de Projetos</h1>					
+						<h1><a href="index.php">Gerenciamento de Projetos</a></h1>					
 					</center>		
 				</div>		
 			</div>
-			<div class="row">
-				<div class="col m12">
+			<div class="row prazo">
+				<div class="col m12 center">
 						<center>
 						<!-- Aqui entrara uma regra dos dias -->
-							<p id="prazo" style="border-radius: 10px 10px 10px 10px; font-size: 24px; margin-top: -0.5cm;
-  background-color: #e53935; color: white;">Prazo do projeto: 10 dias</p>
+							<p id="prazo">Prazo do projeto: 10 dias</p>
 						<!-- Decrementa apenas se for dias uteis -->
 						</center>
 				</div>	
 			</div>
+			<div class="container" style="border-style: black;">
 
 			<div class="row">
 				<div class="col m5 s12">
@@ -51,12 +49,14 @@ if ($start == "start"){
 				</div>
 				<div class="col m2 s12">
 				<center>
+				<b>Projeto: Ativo</b>
 					<i class="material-icons" style='font-size: 60px; color: #0d47a1;'>assessment</i>
 				</center>
 				</div>		
 				<div class="col m5 s12">
 					<h5>Responsável - <b>Leonardo Ribeiro</b></h5>
 				</div>		
+			</div>
 			</div>
 					<div>
 						<div class="row">
@@ -67,6 +67,7 @@ if ($start == "start"){
 							</div>
 						</br>
 						</div>
+					<div class="container">
 						<div class="row altura_div">
 							    <div class='col m2 s12 center'>
 								<div style="margin-left: 0.5cm;" id="iniciado">

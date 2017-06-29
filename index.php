@@ -18,7 +18,7 @@
 				</div>
 			</div>
 		<div class="container altura_div">
-			<form method="get" action="visualizar_projeto.php">
+			<form method="post" action="visualizar_projeto.php">
 			<div class="row">
 				<div class="col m4">
 					<label class="fonte">Nome do Projeto</label>
