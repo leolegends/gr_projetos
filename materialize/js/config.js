@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	
 	$("#prazo").hide().show(1000);
 
 	$("#iniciado").hide().show(500);
@@ -10,6 +10,19 @@ $(document).ready(function(){
 	$("#entregue").hide().show(3500);
 	$("#title_cadastro").hide().fadeIn(3000);
 	$(".corpo2").hide();
+	$("#add_comentario").hide();
+	$("#comentarios").hide();
+	
+	$("#mostrar_comentarios").click(function(){
+		$("#comentarios").toggle(1000);
+		$("#add_comentario").hide(500);
+	});
+
+	$("#incluir_comentarios").click(function(){
+		$("#add_comentario").toggle(1000);
+		$("#comentarios").hide(500);
+	});
+
 
 	$("#localizar").click(function(){
 		$(".corpo2").toggle(500);

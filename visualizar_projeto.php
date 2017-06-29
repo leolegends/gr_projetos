@@ -117,6 +117,88 @@ if ($start == "start"){
 							 </div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col m12">
+							<center>
+							<button class="btn grey darken-4" id="mostrar_comentarios">ver comentários</button>
+							<button class="btn green darken-4" id="incluir_comentarios">incluir comentários</button>
+							</center>
+						</div>
+					</div>
+					<div id="add_comentario">
+				<div class="row">
+					<div class="col m12 s12 comentario green darken-4">
+						<center>
+							<h3>Incluir comentário</h3>
+						</center>
+					</div>
+				</div>
+					<div class="container">
+						<div class="row">
+						<form>
+							<div class="col m4">
+								<p>Nome:</p>
+								<input type="text" name="comentario_nome">
+							</div>
+						
+							<div class="col m4">
+								<select class="input-field">
+									<option>123</option>
+									<option>321</option>
+								</select>
+							</div>							
+						</div>
+						<div class="row">
+							<div class="col m10">
+								<p>Comentário:</p>
+								<textarea name="comentario" class="materialize-textarea"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col m12">
+								<button class="btn waves green darken-4" name="incluir_comentario" value="incluir_comentario">Incluir comentário</button>
+							</div>
+						</form>
+						</div>
+						</div>
+					</div>
+
+				<div id="comentarios">
+				<div class="row">
+					<div class="col m12 s12 comentario">
+						<center>
+							<h3>Comentários</h3>
+						</center>
+					</div>
+				</div>
+
+				<div class="container">
+				<div class="row">
+				<hr>
+					<div class="col m4 s12 center">
+						<p><i class="material-icons">person_pin</i> Leonardo Ribeiro</p>
+						
+					</div>
+					<div class="col m4 s12 center iniciado">
+						<p>Iniciado</p>						
+					</div>	
+					<div class="col m4 s12 center">
+						<p>01/01/2017</p>
+						
+					</div>				
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col m12 s12">
+						<p style='font-weight: bold;'>Comentário: </p>
+						<label><i class="material-icons">comment</i></label>
+						<p>Comentário simples em HTML.</p>
+					</div>
+				</div>
+				<hr>
+				</div>
+
+			</div>
 			</div>
 
 
