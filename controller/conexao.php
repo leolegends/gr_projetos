@@ -13,7 +13,7 @@ Use o MYSQL ou mude as variaveis para outro tipo de SQL.
   //defina o servidor.
   $login = 'root';
  //defina o nome do usuario.
-  $senha = '*****';
+  $senha = '***';
 //a senha do banco de dados.
   $banco = 'projetos';
 // e qual vai ser o banco.

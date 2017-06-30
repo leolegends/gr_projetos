@@ -34,9 +34,9 @@
 		insert into projeto (projeto, responsavel, solicitante, prazo_dias, projeto_status, 
 		iniciado, analise, desenvolvendo, corrigindo, aprovado, entregue, pausar_projeto,
 		data_inicio) value (
-		\"$this->pj_nome\",\"$this->pj_responsavel\", \"$this->pj_solicitante\", 
-		$this->pj_prazo, 1, 1, 0, 0, 0, 0, 0, 0, 
-		\"$this->pj_inicio\"
+		\"$pj_nome\",\"$pj_responsavel\", \"$pj_solicitante\", 
+		$pj_prazo, 1, 1, 0, 0, 0, 0, 0, 0, 
+		\"$pj_inicio\"
 		);
 
 		");
@@ -47,9 +47,10 @@
 
 	public function RetornaProjetos($pj_nome){
 		$query = mysqli_query($conexao, "
-			select id_projeto, projeto from projeto
-			where projeto like = '%$this->pj_nome%'
-			");
+
+			select projeto from projeto where projeto like '%$pj_nome%'
+			"
+			);
 		return $query;
 	}
 
