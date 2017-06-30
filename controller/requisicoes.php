@@ -1,5 +1,6 @@
 <?php
-	require_once ("conexao.php");
+	//conexao ao banco.
+	require_once ('conexao.php');
 
 	class controller {
 

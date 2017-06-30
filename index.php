@@ -1,6 +1,7 @@
 <?php
 
-require_once ("controller/requisicoes.php");
+require_once ('controller/requisicoes.php');
+
 
 extract($_REQUEST);
 	if ($localizar == "localizar"){
