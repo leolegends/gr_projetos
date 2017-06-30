@@ -40,7 +40,7 @@ $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 				</div>
 			</div>
 		<div class="container altura_div">
-			<form method="post" action="visualizar_projeto.php">
+			<form method="post" action="projeto/visualizar_projeto.php">
 			<div class="row">
 				<div class="col m4">
 					<label class="fonte">Nome do Projeto</label>
