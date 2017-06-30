@@ -27,6 +27,24 @@
 		
 	}
 
+	public function IniciaProjeto($pj_nome, $pj_responsavel, $pj_solicitante, $pj_prazo, $pj_inicio){
+
+
+		$query = mysqli_query($conexao, ""
+
+		insert into projeto (projeto, responsavel, solicitante, prazo_dias, projeto_status, 
+		iniciado, analise, desenvolvendo, corrigindo, aprovado, entregue, pausar_projeto,
+		data_inicio) value (
+		"$pj_nome", "$pj_responsavel", "$pj_solicitante", 
+		$pj_prazo, 1, 0, 0, 0, 0, 0, 0, 0, 
+		"2017-12-20"
+
+);
+
+
+			);
+
+	}
 
 
 	}
