@@ -1,4 +1,7 @@
 <?php
+
+require_once ("controller/requisicoes.php");
+
 extract($_REQUEST);
 	if ($localizar == "localizar"){
 		echo $pj_localizar;
