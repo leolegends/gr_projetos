@@ -1,0 +1,25 @@
+<?php
+
+/*
+Essa pagina é apenas para conexão ao Banco de dados.
+----
+Use o MYSQL ou mude as variaveis para outro tipo de SQL.
+----
+*/
+  $servidor = 'localhost';
+  //defina o servidor.
+  $login = 'root';
+ //defina o nome do usuario.
+  $senha = '';
+//a senha do banco de dados.
+  $banco = 'projeto';
+// e qual vai ser o banco.
+  $conexao = mysqli_connect($servidor,$login,$senha,$banco);
+    if (!$conexao) {
+      echo "Falha ao conectar ao Banco de Dados";
+      die;
+    }
+
+	
+
+?>
