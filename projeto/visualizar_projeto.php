@@ -28,7 +28,7 @@ if ($start == "start"){
 			<div class="row cadastro_title">
 				<div class="col m12 s12">
 					<center>
-						<h1><a href="../index.php">Gerenciamento de Projetos</a></h1>					
+						<h2><a href="../index.php">Gerenciamento de Projetos</a></h2>					
 					</center>		
 				</div>		
 			</div>

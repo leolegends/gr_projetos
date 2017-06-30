@@ -47,7 +47,7 @@ $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 	<body class="corpo light-blue darken-4">
 			<div class="row">
 				<div class="col m12 center cadastro_title">
-					<h1 id="title_cadastro">Cadastro de Projetos <i style="font-size: 50px;"class="material-icons">bubble_chart</i></h1>
+					<h2 id="title_cadastro">Cadastro de Projetos <i style="font-size: 50px;"class="material-icons">bubble_chart</i></h2>
 				</div>
 			</div>
 		<div class="container altura_div">
