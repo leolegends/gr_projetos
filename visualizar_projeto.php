@@ -111,7 +111,7 @@ if ($start == "start"){
 									<i class="material-icons" style="font-size: 70px; color:#76ff03; text-shadow: 0px 10px 80px #76ff03;">check_circle</i>
 									<!-- se a data de prazo for 
 									menor que a data de tempo ok. -->
-									<p>Entregue no Prazo!</p>
+									<p>Entregue</p>
 									<p>01/01/2017</p>
 								</div>
 							 </div>
