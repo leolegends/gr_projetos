@@ -2,7 +2,7 @@
 	//conexao ao banco.
 	require_once ('conexao.php');
 
-	class controller {
+	class Controller {
 
 	public $pj_nome;
 	public $pj_responsavel;
@@ -19,31 +19,38 @@
 	}
 
 	public function RetornaVariaveis(){
-		echo $pj_nome . "</br>";
-		echo $pj_responsavel. "</br>";
-		echo $pj_solicitante . "</br>";
-		echo $pj_prazo . "</br>";
-		echo $pj_inicio . "</br>";
+		echo $this->pj_nome . "</br>";
+		echo $this->pj_responsavel. "</br>";
+		echo $this->pj_solicitante . "</br>";
+		echo $this->pj_prazo . "</br>";
+		echo $this->pj_inicio . "</br>";
 		
 	}
 
 	public function IniciaProjeto($pj_nome, $pj_responsavel, $pj_solicitante, $pj_prazo, $pj_inicio){
 
 
-		$query = mysqli_query($conexao, ""
-
+		$query = mysqli_query($conexao, "
 		insert into projeto (projeto, responsavel, solicitante, prazo_dias, projeto_status, 
 		iniciado, analise, desenvolvendo, corrigindo, aprovado, entregue, pausar_projeto,
 		data_inicio) value (
-		"$pj_nome", "$pj_responsavel", "$pj_solicitante", 
-		$pj_prazo, 1, 0, 0, 0, 0, 0, 0, 0, 
-		"2017-12-20"
+		\"$this->pj_nome\",\"$this->pj_responsavel\", \"$this->pj_solicitante\", 
+		$this->pj_prazo, 1, 1, 0, 0, 0, 0, 0, 0, 
+		\"$this->pj_inicio\"
+		);
 
-);
+		");
 
+		return $query;
+	
+	}
 
-			);
-
+	public function RetornaProjetos($pj_nome){
+		$query = mysqli_query($conexao, "
+			select id_projeto, projeto from projeto
+			where projeto like = '%$this->pj_nome%'
+			");
+		return $query;
 	}
 
 

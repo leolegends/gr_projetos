@@ -11,6 +11,13 @@ extract($_REQUEST);
 $hoje = date('d') . "/" .date('m') . "/" . date('Y');
 $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 
+	if($start == "start"){
+
+	$obj = new Controller($pj_name, $pj_responsavel, $pj_solicitante, $pj_prazo, $hoje_insert);
+
+
+	}
+
 ?>
 
 <html>
@@ -44,7 +51,7 @@ $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 				</div>
 			</div>
 		<div class="container altura_div">
-			<form method="post" action="projeto/visualizar_projeto.php">
+			<form method="post" action="index.php">
 			<div class="row">
 				<div class="col m4">
 					<label class="fonte">Nome do Projeto</label>
