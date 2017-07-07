@@ -48,11 +48,33 @@
 	public function RetornaProjetos($conexao,$pj_busca){
 		$query = mysqli_query($conexao, "
 
-			select projeto, responsavel, prazo_dias, data_inicio from projeto
+			select id_projeto, projeto, responsavel, prazo_dias, data_inicio from projeto
 			where projeto like '%$pj_busca%'
+
+			order by data_inicio desc
 			"
 			);
 
+		return $query;
+	}
+
+
+	public static function VisualizaProjeto($conexao, $id){
+		$query = mysqli_query($conexao, "
+			select id_projeto, projeto, responsavel, prazo_dias,
+			 projeto_status, iniciado,analise, desenvolvendo,
+			  corrigindo, aprovado, entregue 
+			  from projeto where id_projeto = $id
+			");
+	
+		return $query;
+
+	}
+
+	public static function Status($conexao){
+		$query = mysqli_query($conexao, "
+			select * from status order by id asc;
+			");
 		return $query;
 	}
 

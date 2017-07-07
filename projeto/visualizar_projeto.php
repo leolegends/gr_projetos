@@ -1,14 +1,43 @@
 <?php
 
+require_once ('../controller/requisicoes.php');
+require_once ('../controller/conexao.php');
+
+$hoje = date('d') . "/" .date('m') . "/" . date('Y');
+$hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
+
 extract($_REQUEST);
 
-if ($start == "start"){
+$obj = new Controller($hoje_insert);
+
+$queue = $obj->VisualizaProjeto($conexao, $id);
+	
+	if(mysqli_num_rows($queue) == 0){
+		echo "<script>
+		window.alert('Seu acesso foi sem parametro.');
+		top.location='../index.php'
+
+		</script>";
+		die;
+	}
+
+while($a = mysqli_fetch_array($queue)){
+
+	$projeto = $a['projeto'];
+	$responsavel = $a['responsavel'];
+	$prazo_dias = $a['prazo_dias'];
+	$projeto_status = $a['projeto_status'];
 
 
-
-
+	if($projeto_status == 0){
+		$projeto_status = "<b style='color: red;'>Desativado</b>";
+	}else{
+		$projeto_status = "Ativo";
+	}
 
 }
+
+
 
 ?>
 
@@ -36,7 +65,7 @@ if ($start == "start"){
 				<div class="col m12 center">
 						<center>
 						<!-- Aqui entrara uma regra dos dias -->
-							<p id="prazo">Prazo do projeto: 10 dias</p>
+							<p id="prazo">Prazo do projeto: <?php echo $prazo_dias; ?> dias</p>
 						<!-- Decrementa apenas se for dias uteis -->
 						</center>
 				</div>	
@@ -45,16 +74,16 @@ if ($start == "start"){
 
 			<div class="row">
 				<div class="col m5 s12">
-					<h5>Projeto designado - <b>GR Projetos</b></h5>
+					<h5>Projetos - <b><?php echo $projeto; ?></b></h5>
 				</div>
 				<div class="col m2 s12">
 				<center>
-				<b>Projeto: Ativo</b>
+				<b>Projeto: <?php echo $projeto_status; ?></b>
 					<i class="material-icons" style='font-size: 60px; color: #0d47a1;'>assessment</i>
 				</center>
 				</div>		
 				<div class="col m5 s12">
-					<h5>Responsável - <b>Leonardo Ribeiro</b></h5>
+					<h5>Responsável - <b><?php echo $responsavel; ?></b></h5>
 				</div>		
 			</div>
 			</div>
@@ -144,8 +173,17 @@ if ($start == "start"){
 							<div class="col m4 right">
 							<p>Status de Projeto </p>
 								<select class="browser-default" name="status_nome">
-									<option>123</option>
-									<option>321</option>
+									
+								<?php
+									$st = $obj->Status();
+									
+									while($s = mysqli_fetch_array($st)){
+
+							echo "<option value=".$s['id']."'>".$s['status_nome']."</option>";
+									}
+
+								?>
+
 								</select>
 							</div>							
 						</div>

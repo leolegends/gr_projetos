@@ -150,7 +150,7 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 
 						echo "
 						<tr>
-						<td><a href='projeto/visualizar_projeto?projeto_id=1'>" . $b['projeto'] . "</a></td>
+						<td><a href='projeto/visualizar_projeto.php?id= ". $b['id_projeto'] ."'>" . $b['projeto'] . "</a></td>
 						<td>". $b['responsavel'] ."</td>
 						<td>" . $b['prazo_dias']. " dias </td>
 						<td>" . inverteData($dn) ."</td>
