@@ -38,7 +38,6 @@ while($a = mysqli_fetch_array($queue)){
 }
 
 
-
 ?>
 
 <html>
@@ -164,7 +163,7 @@ while($a = mysqli_fetch_array($queue)){
 				</div>
 					<div class="container">
 						<div class="row">
-						<form method="post">
+						<form method="post" action='visualizar_projeto.php'>
 							<div class="col m4">
 								<p>Nome:</p>
 								<input type="text" name="comentario_nome">
@@ -175,11 +174,12 @@ while($a = mysqli_fetch_array($queue)){
 								<select class="browser-default" name="status_nome">
 									
 								<?php
-									$st = $obj->Status();
+									$st = $obj->Status($conexao);
 									
 									while($s = mysqli_fetch_array($st)){
 
 							echo "<option value=".$s['id']."'>".$s['status_nome']."</option>";
+									
 									}
 
 								?>

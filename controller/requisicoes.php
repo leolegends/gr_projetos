@@ -73,11 +73,28 @@
 
 	public static function Status($conexao){
 		$query = mysqli_query($conexao, "
+
 			select * from status order by id asc;
 			");
 		return $query;
 	}
 
+
+	public static function IncluirComentario($conexao, $id, $nome, $status_id, $comentario, $data_comentario){
+
+		$query = mysqli_query($conexao, "
+					insert into comentarios (
+			id_projeto, nome_comentarista, status_id,
+			status_comentario, data
+			) values(
+			$id_projeto, $comentarista, $status_id, $comentario, $data_insert
+			);
+			
+			");
+
+		return $query;
+
+	}
 
 	}
 
