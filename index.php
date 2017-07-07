@@ -1,22 +1,38 @@
 <?php
 
 require_once ('controller/requisicoes.php');
-
-
-extract($_REQUEST);
-	if ($localizar == "localizar"){
-		echo $pj_localizar;
-	}
+require_once ('controller/conexao.php');
 
 $hoje = date('d') . "/" .date('m') . "/" . date('Y');
 $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 
+extract($_REQUEST);
+
+$obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
+
+
 	if($start == "start"){
 
-	$obj = new Controller($pj_name, $pj_responsavel, $pj_solicitante, $pj_prazo, $hoje_insert);
+	$obj->IniciaProjeto(
 
+		$conexao, 
+		$name,
+		$responsavel, 
+		$solicitante, 
+		$prazo, 
+		$hoje_insert
+		);
 
+		echo "<div id='cadastrado'><center><h4 id='esconde'>Projeto: ".$name ." cadastrado com sucesso!</h4></center></div>";
 	}
+
+	function inverteData($data){
+    if(count(explode("/",$data)) > 1){
+        return implode("-",array_reverse(explode("/",$data)));
+    }elseif(count(explode("-",$data)) > 1){
+        return implode("/",array_reverse(explode("-",$data)));
+    }
+}
 
 ?>
 
@@ -32,16 +48,6 @@ $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 		<script type="text/javascript" src="materialize/js/jquery.min.js"></script>
 		<script type="text/javascript" src="materialize/js/config.js"></script>
 
-		<script>
-			$(function(){
-				/*var b = $("#pj_datainicio").val(
-					<?php echo $hoje; ?>
-					);
-				*/
-				
-			})
-
-		</script>
 
 	</head>
 	<body class="corpo light-blue darken-4">
@@ -55,20 +61,20 @@ $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 			<div class="row">
 				<div class="col m4">
 					<label class="fonte">Nome do Projeto</label>
-					<input class="fonte" type="text" name="pj_name" required>
+					<input class="fonte" type="text" name="name" required>
 				</div>
 				<div class="col m2">
 					<label class="fonte">Reponsável</label>
-					<input class="fonte" type="text" name="pj_responsavel" required>
+					<input class="fonte" type="text" name="responsavel" required>
 				</div>
 				<div class="col m2">
 					<label class="fonte">Solicitante</label>
-					<input class="fonte" type="text" name="pj_solicitante" required>
+					<input class="fonte" type="text" name="solicitante" required>
 				</div>
 				<div class="col m2"
 				>
 					<label class="fonte">Prazo do Projeto (dias)</label>
-					<input class="fonte" type="number" name="pj_prazo" id="pj_prazo" required>
+					<input class="fonte" type="number" name="prazo" id="pj_prazo" required>
 
 					<b class="fonte" id="projeto_label"></b>
 				</div>
@@ -92,19 +98,6 @@ $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 				<button id="localizar" class="btn-flat waves" style='color: green;'>Buscar projeto</button>
 			</center>
 			</div>
-			
-				<?php
-
-				if (isset($localizar)){
-				echo "<div class=\"row\" style=\"background-color: white; height: 1cm;\">
-				<div class=\"col m12\">
-				$pj_localizar
-				</div>
-				</div>";
-				
-				}
-				?>
-			
 			<div class="corpo2">
 			<div class='container'>
 	<!-- Formulário de busca -->
@@ -114,7 +107,7 @@ $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 						<label class='fonte'>
 							Localizar Projeto:
 						</label>
-						<input class='fonte' type="text" name="pj_localizar" required>
+						<input class='fonte' type="text" name="projeto_busca" required>
 					</div>
 					<div class='col m6' style="margin-top: 0.6cm;">
 						<button class="btn waves blue-grey darken-4" name="localizar" value="localizar">Localizar</button>
@@ -123,7 +116,55 @@ $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 			</form>
 
 
+		</div>
+		</div>
+				<?php
 
-		</div>
-		</div>
+				if ($localizar == "localizar"){
+				
+
+				echo "<div class=\"row\" style=\"background-color: white;\">
+				<div class=\"col m12\">
+				<table class='striped' style='align-text: center;'>
+				
+				";
+				$q = $obj->RetornaProjetos($conexao,$projeto_busca);
+
+				if (mysqli_num_rows($q) == 0){
+					echo "<center><h4>Não retornou resultados.</h4></center>";
+					die;
+				}else{
+					echo "						<tr>
+						<td><b>Nome do Projeto</b></td>
+						<td><b>Responsável pelo Projeto</b></td>
+						<td><b>Prazo do projeto</b></td>
+						<td><b>Data de Inicio</b></td>
+						</tr>";
+				}
+
+					while($b = mysqli_fetch_array($q)){
+						$dn = $b['data_inicio'];
+						
+
+
+
+						echo "
+						<tr>
+						<td><a href='projeto/visualizar_projeto?projeto_id=1'>" . $b['projeto'] . "</a></td>
+						<td>". $b['responsavel'] ."</td>
+						<td>" . $b['prazo_dias']. " dias </td>
+						<td>" . inverteData($dn) ."</td>
+						</tr>
+
+						";
+					}
+
+				echo "
+				</table>
+				</div>
+				</div>";
+				
+				}
+
+				?>
 	</body>

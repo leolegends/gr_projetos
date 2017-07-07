@@ -1,14 +1,14 @@
 <?php
-	//conexao ao banco.
-	require_once ('conexao.php');
 
-	class Controller {
+
+	Class Controller {
 
 	public $pj_nome;
 	public $pj_responsavel;
 	public $pj_solicitante;
 	public $pj_prazo;
 	public $pj_inicio;
+
 
 	public function __construct($pj_nome, $pj_responsavel, $pj_solicitante, $pj_prazo, $pj_inicio){
 		$this->pj_nome = $pj_nome;
@@ -27,7 +27,7 @@
 		
 	}
 
-	public function IniciaProjeto($pj_nome, $pj_responsavel, $pj_solicitante, $pj_prazo, $pj_inicio){
+	public function IniciaProjeto($conexao,$pj_nome, $pj_responsavel, $pj_solicitante, $pj_prazo, $pj_inicio){
 
 
 		$query = mysqli_query($conexao, "
@@ -45,12 +45,14 @@
 	
 	}
 
-	public function RetornaProjetos($pj_nome){
+	public function RetornaProjetos($conexao,$pj_busca){
 		$query = mysqli_query($conexao, "
 
-			select projeto from projeto where projeto like '%$pj_nome%'
+			select projeto, responsavel, prazo_dias, data_inicio from projeto
+			where projeto like '%$pj_busca%'
 			"
 			);
+
 		return $query;
 	}
 

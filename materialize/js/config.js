@@ -12,6 +12,7 @@ $(document).ready(function(){
 	$(".corpo2").hide();
 	$("#add_comentario").hide();
 	$("#comentarios").hide();
+	$("#esconde").hide(2500);
 	
 	$("#mostrar_comentarios").click(function(){
 		$("#comentarios").toggle(1000);
