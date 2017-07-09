@@ -101,6 +101,24 @@
 
 	}
 
+	
+	public static function RetornaProjetoAndamento($conexao, $id){
+
+		$query = mysqli_query($conexao, "
+				select id_projeto, projeto,
+				 iniciado, data_iniciado,
+				 analise, data_analise,
+				 desenvolvendo, data_desenvolvendo,
+				 corrigindo, data_corrigindo,
+				 aprovado, data_aprovado,
+				 entregue, data_entregue
+				 from projeto
+
+				 where id_projeto = $id;
+			");		
+				return $query;
+	}
+
 	}
 
 

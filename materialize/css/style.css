@@ -131,3 +131,11 @@ font-weight: 100;
 #comentarios {
   overflow-y: auto;
 }
+.atualiza_title {
+  background-color: #0d47a1;
+  color: white; 
+  }
+
+  .tamanho {
+    font-size: 18px;
+  }

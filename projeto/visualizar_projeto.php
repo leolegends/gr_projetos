@@ -2,13 +2,51 @@
 
 require_once ('../controller/autoload.php');
 
-
 $hoje = date('d') . "/" .date('m') . "/" . date('Y');
 $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 
 extract($_REQUEST);
 
+	function inverteData($data){
+    if(count(explode("/",$data)) > 1){
+        return implode("-",array_reverse(explode("/",$data)));
+    }elseif(count(explode("-",$data)) > 1){
+        return implode("/",array_reverse(explode("-",$data)));
+    }
+	
+  }
+
 $obj = new Controller($hoje_insert);
+
+$timeline = $obj->RetornaProjetoAndamento($conexao, $id);
+
+
+ while($t = mysqli_fetch_array($timeline)){
+ 	$projeto_id = $t['id_projeto'];
+ 
+ 	$iniciado = $t['iniciado'];
+ 	$data_iniciado = $t['data_iniciado'];
+
+ 	$analise = $t['analise'];
+ 	$data_analise = $t['data_analise'];
+
+ 	$desenvolvendo = $t['desenvolvendo'];
+ 	$data_desenvolvendo = $t['data_desenvolvendo'];
+
+ 	$corrigindo = $t['corrigindo'];
+ 	$data_corrigindo = $t['data_corrigindo'];
+
+ 	$aprovado = $t['aprovado'];
+ 	$data_aprovado = $t['data_aprovado'];
+
+ 	$entregue = $t['entregue'];
+ 	$data_entregue = $t['data_entregue'];
+
+
+ }
+
+
+
 
 $queue = $obj->VisualizaProjeto($conexao, $id);
 	
@@ -97,52 +135,71 @@ while($a = mysqli_fetch_array($queue)){
 						</div>
 					<div class="container">
 						<div class="row altura_div">
+						<?php if ($iniciado == 1) { ?>
 							    <div class='col m2 s12 center'>
 								<div style="margin-left: 0.5cm;" id="iniciado">
 									<i class="material-icons" style="font-size: 70px; color: #7cb342; text-shadow: 0px 10px 50px #7cb342;">add_circle</i>
 									<p>Iniciado</p>
 									<!-- Aqui entra uma variavel -->
-									<p>01/01/2017</p>
+									<p><?php echo inverteData($data_iniciado); ?></p>
 								</div>
 							 </div>
+						<?php }
+						if ($analise == 1){
+						 ?>
+
 							    <div class='col m2 s12 center'>
 								<div style="margin-left: 0.5cm;" id="analise">
 									<i class="material-icons" style="font-size: 70px; color: #01579b; text-shadow: 0px 10px 50px #01579b;">gesture</i>
 									<p>Em Análise</p>
 									<!-- Aqui entra uma variavel -->
-									<p>01/01/2017</p>
+									<p><?php echo inverteData($data_analise);?></p>
 								</div>
 							 </div>
+						<?php } 
+						if ($desenvolvendo == 1){
+						?>
+
 							    <div class='col m2 s12 center'>
 								<div style="margin-left: 0.5cm;" id="desenvolvendo">
 									<i class="material-icons" style="font-size: 70px; color: #c2185b; text-shadow: 0px 10px 50px #c2185b;">bubble_charts</i>
 									<p>Desenvolvendo</p>
-									<p>01/01/2017</p>
+									<p><?php echo inverteData($data_desenvolvendo);?> </p>
 								</div>
 							 </div>
+						<?php }
+						if ($corrigindo == 1){
+						?>
 							    <div class='col m2 s12 center'>
 								<div style="margin-left: 0.5cm;" id="corrigindo">
 									<i class="material-icons" style="font-size: 70px; color: #00e5ff; text-shadow: 0px 10px 50px #00e5ff;">settings</i>
 									<p>Corrigindo</p>
-									<p>01/01/2017</p>
+									<p><?php echo inverteData($data_corrigindo); ?></p>
 								</div>
 							 </div>
+							 <?php }
+							 if ($aprovado == 1){
+							  ?>
 							    <div class='col m2 s12 center'>
 								<div style="margin-left: 0.5cm;" id="aprovado">
 									<i class="material-icons" style="font-size: 70px; color: #ffea00; text-shadow: 0px 10px 80px #ffea00;">thumb_up</i>
 									<p>Aprovado</p>
-									<p>01/01/2017</p>
+									<p><?php inverteData($data_aprovado); ?></p>
 								</div>
 							 </div>
+							<?php } 
+							if ($entregue == 1){
+							?>
 							    <div class='col m2 s12 center'>
 								<div style="margin-left: 0.5cm;" id="entregue">
 									<i class="material-icons" style="font-size: 70px; color:#76ff03; text-shadow: 0px 10px 80px #76ff03;">check_circle</i>
 									<!-- se a data de prazo for 
 									menor que a data de tempo ok. -->
 									<p>Entregue</p>
-									<p>01/01/2017</p>
+									<p><?php inverteData($data_entregue); ?></p>
 								</div>
 							 </div>
+						<?php } ?>
 						</div>
 					</div>
 					<div class="row">
