@@ -1,7 +1,7 @@
 <?php
 
-require_once ('../controller/requisicoes.php');
-require_once ('../controller/conexao.php');
+require_once ('../controller/autoload.php');
+
 
 $hoje = date('d') . "/" .date('m') . "/" . date('Y');
 $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');

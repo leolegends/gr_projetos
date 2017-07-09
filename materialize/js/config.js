@@ -17,6 +17,7 @@ $(document).ready(function(){
 	$("#mostrar_comentarios").click(function(){
 		$("#comentarios").toggle(1000);
 		$("#add_comentario").hide(500);
+	
 	});
 
 	$("#incluir_comentarios").click(function(){

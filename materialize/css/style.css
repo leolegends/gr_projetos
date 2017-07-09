@@ -127,3 +127,7 @@ font-weight: 100;
 .borda {
   border-style: solid;
 }
+
+#comentarios {
+  overflow-y: auto;
+}

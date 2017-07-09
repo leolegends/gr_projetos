@@ -1,7 +1,6 @@
 <?php
 
-require_once ('controller/requisicoes.php');
-require_once ('controller/conexao.php');
+require_once ('controller/autoload.php');
 
 $hoje = date('d') . "/" .date('m') . "/" . date('Y');
 $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
@@ -131,7 +130,7 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 				$q = $obj->RetornaProjetos($conexao,$projeto_busca);
 
 				if (mysqli_num_rows($q) == 0){
-					echo "<center><h4>Não retornou resultados.</h4></center>";
+					echo "<center><p>Ainda não existem projetos com esse nome.</p></center>";
 					die;
 				}else{
 					echo "						<tr>
@@ -139,6 +138,7 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 						<td><b>Responsável pelo Projeto</b></td>
 						<td><b>Prazo do projeto</b></td>
 						<td><b>Data de Inicio</b></td>
+						<td><b>Atualizar</b></td>
 						</tr>";
 				}
 
@@ -154,6 +154,7 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 						<td>". $b['responsavel'] ."</td>
 						<td>" . $b['prazo_dias']. " dias </td>
 						<td>" . inverteData($dn) ."</td>
+						<td> <a href='projeto/atualizar.php?id=". $b['id_projeto'] ."'>Atualizar Projeto </a></td>
 						</tr>
 
 						";
