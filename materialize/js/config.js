@@ -13,6 +13,7 @@ $(document).ready(function(){
 	$("#add_comentario").hide();
 	$("#comentarios").hide();
 	$("#esconde").hide(2500);
+	$("#alert_comentario").hide();
 	
 	$("#mostrar_comentarios").click(function(){
 		$("#comentarios").toggle(1000);
@@ -45,7 +46,12 @@ $(document).ready(function(){
 	}
 
 	});
-	
+
+	$("#incluir_comentario_btn").click(function(){
+	if(!$("#comentario_text").val() == ""){
+		$("#alert_comentario").show();
+	    }
+	});
 
 
 });

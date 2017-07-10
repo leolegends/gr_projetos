@@ -88,13 +88,30 @@
 	public static function IncluirComentario($conexao, $id, $nome, $status_id, $comentario, $data_comentario){
 
 		$query = mysqli_query($conexao, "
-					insert into comentarios (
+			insert into comentarios (
 			id_projeto, nome_comentarista, status_id,
 			status_comentario, data
-			) values(
-			$id_projeto, $comentarista, $status_id, $comentario, $data_insert
-			);
-			
+			) value(
+			$id, \"$nome\", $status_id, \"$comentario\", \"$data_comentario\"
+			);			
+			");
+
+		return $query;
+
+	}
+
+
+	public static function RetornaComentarios($conexao, $id){
+
+		$query = mysqli_query($conexao, "
+			select s.id, c.id_projeto, c.nome_comentarista, s.status_nome,
+			c.status_comentario, c.data
+			 from comentarios c
+			left join status s
+			on s.id = c.status_id
+			where id_projeto = $id
+
+			order by data desc;
 			");
 
 		return $query;

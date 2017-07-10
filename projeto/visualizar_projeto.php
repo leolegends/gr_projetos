@@ -18,6 +18,8 @@ extract($_REQUEST);
 
 $obj = new Controller($hoje_insert);
 
+$id;
+
 $timeline = $obj->RetornaProjetoAndamento($conexao, $id);
 
 
@@ -45,8 +47,11 @@ $timeline = $obj->RetornaProjetoAndamento($conexao, $id);
 
  }
 
+if ($incluir_comentario == "incluir_comentario"){
+	$obj->IncluirComentario($conexao, $id, $comentario_nome, $status_nome, $comentarios, $hoje_insert);
+}
 
-
+$view_comentarios = $obj->RetornaComentarios($conexao, $id);
 
 $queue = $obj->VisualizaProjeto($conexao, $id);
 	
@@ -74,6 +79,7 @@ while($a = mysqli_fetch_array($queue)){
 	}
 
 }
+
 
 
 ?>
@@ -220,10 +226,10 @@ while($a = mysqli_fetch_array($queue)){
 				</div>
 					<div class="container">
 						<div class="row">
-						<form method="post" action='visualizar_projeto.php'>
+						<form method="post" action='visualizar_projeto.php?id=<?php echo $id; ?>'>
 							<div class="col m4">
 								<p>Nome:</p>
-								<input type="text" name="comentario_nome">
+								<input type="text" name="comentario_nome" required>
 							</div>
 						
 							<div class="col m4 right">
@@ -235,7 +241,7 @@ while($a = mysqli_fetch_array($queue)){
 									
 									while($s = mysqli_fetch_array($st)){
 
-							echo "<option value=".$s['id']."'>".$s['status_nome']."</option>";
+							echo "<option value=".$s['id'].">".$s['status_nome']."</option>";
 									
 									}
 
@@ -247,12 +253,15 @@ while($a = mysqli_fetch_array($queue)){
 						<div class="row">
 							<div class="col m10">
 								<p>Comentário:</p>
-								<textarea name="comentario" class="materialize-textarea"></textarea>
+								<textarea name="comentarios" class="materialize-textarea"></textarea required>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col m12">
-								<button class="btn waves green darken-4" name="incluir_comentario" value="incluir_comentario">Incluir comentário</button>
+							<div class="col m6">
+								<button class="btn waves green darken-4" name="incluir_comentario" value="incluir_comentario" id="incluir_comentario_btn" type='submit'>Incluir comentário</button>
+							</div>
+							<div class='col m6'>
+								<p style='color: blue; font-size: 20px; font-weight: bold;' id='alert_comentario'>Comentário Feito!</p>
 							</div>
 						</form>
 						</div>
@@ -269,17 +278,27 @@ while($a = mysqli_fetch_array($queue)){
 				</div>
 
 				<div class="container">
+		<?php 
+
+		while($coments = mysqli_fetch_array($view_comentarios)){
+
+			if ($coments['status_nome'] == "Iniciado"){$classe = "iniciado";}
+			if ($coments['status_nome'] == "Analise"){$classe = "analise";}
+			if ($coments['status_nome'] == "Desenvolvimento"){$classe = "desenvolvimento";}
+			if ($coments['status_nome'] == "Corrigindo"){$classe = "corrigindo";}
+			if ($coments['status_nome'] == "Aprovado"){$classe = "aprovado";}
+			if ($coments['status_nome'] == "Entregue"){$classe = "entregue";}
+		?>
 				<div class="row">
-				<hr>
 					<div class="col m4 s12 center">
-						<p><i class="material-icons">person_pin</i> Leonardo Ribeiro</p>
+						<p><i class="material-icons">person_pin</i> <?php echo $coments['nome_comentarista'];?></p>
 						
 					</div>
-					<div class="col m4 s12 center iniciado">
-						<p>Iniciado</p>						
+					<div class="col m4 s12 center <?php echo $classe; ?>">
+						<p><?php echo $coments['status_nome'];?></p>						
 					</div>	
 					<div class="col m4 s12 center">
-						<p>01/01/2017</p>
+						<p><?php echo inverteData($coments['data']); ?></p>
 						
 					</div>				
 				</div>
@@ -288,10 +307,11 @@ while($a = mysqli_fetch_array($queue)){
 					<div class="col m12 s12">
 						<p style='font-weight: bold;'>Comentário: </p>
 						<label><i class="material-icons">comment</i></label>
-						<p>Comentário simples em HTML.</p>
+						<p><?php echo $coments['status_comentario']?>.</p>
 					</div>
 				</div>
 				<hr>
+		<?php } ?>
 				</div>
 
 			</div>

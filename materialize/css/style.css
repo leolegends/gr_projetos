@@ -120,7 +120,32 @@ font-weight: 100;
 }
 
 .iniciado {
-  background-color: green;
+  background-color: #7cb342;
+  color: white;
+}
+
+.analise {
+  background-color: #01579b;
+  color: white;
+}
+
+.desenvolvimento {
+  background-color: #c2185b;
+  color: white;
+}
+
+.corrigindo {
+  background-color: #00e5ff;
+  color: white;
+}
+
+.aprovado {
+    background-color:  #ffea00;
+  color: white;
+}
+
+.entregue {
+  background-color:  #76ff03;
   color: white;
 }
 
