@@ -184,7 +184,7 @@ while($a = mysqli_fetch_array($queue)){
 								<div style="margin-left: 0.5cm;" id="aprovado">
 									<i class="material-icons" style="font-size: 70px; color: #ffea00; text-shadow: 0px 10px 80px #ffea00;">thumb_up</i>
 									<p>Aprovado</p>
-									<p><?php inverteData($data_aprovado); ?></p>
+									<p><?php echo inverteData($data_aprovado); ?></p>
 								</div>
 							 </div>
 							<?php } 
@@ -196,7 +196,7 @@ while($a = mysqli_fetch_array($queue)){
 									<!-- se a data de prazo for 
 									menor que a data de tempo ok. -->
 									<p>Entregue</p>
-									<p><?php inverteData($data_entregue); ?></p>
+									<p><?php echo inverteData($data_entregue); ?></p>
 								</div>
 							 </div>
 						<?php } ?>

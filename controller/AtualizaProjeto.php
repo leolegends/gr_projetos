@@ -68,7 +68,7 @@ class atualizaProjeto {
 			update projeto 
 			set entregue = 1,
 			data_entregue = '$data',
-			data_entrega = '$data',
+			data_entrega = '$data'
 			where id_projeto = $id;
 			");
 		return $query;
