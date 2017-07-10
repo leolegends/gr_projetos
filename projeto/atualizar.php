@@ -57,7 +57,7 @@ $q = $obj->VisualizaProjeto($conexao, $id);
 		<body>
 		 	<div class="row">
 		 		<div class="col m12 Atualiza_title">
-		 			<h2 class='center'>Atualizar Andamento de Projeto</h2>
+		 			<h2 class='center'><a href="../index.php">Atualizar Andamento de Projeto</a></h2>
 		 		</div>
 
 		 	</div>
