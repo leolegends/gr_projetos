@@ -1,0 +1,5 @@
+ - Mude as variaveis no arquivo de conexao.php
+ - Importe o database projetos_db.sql
+ - configure o arquivo conexao.php e prontinho.
+ - Certifique-se que seu servidor tenha suporte ao MYSQLI.
+
