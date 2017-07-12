@@ -138,7 +138,8 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 						<td><b>Responsável pelo Projeto</b></td>
 						<td><b>Prazo do projeto</b></td>
 						<td><b>Data de Inicio</b></td>
-						<td><b>Atualizar</b></td>
+						<td class='center'><b>TOKEN <i class=\"material-icons\">fingerprint</i></b></td>
+						<td class='center'><b>Atualizar</b></td>
 						</tr>";
 				}
 
@@ -154,7 +155,8 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 						<td>". $b['responsavel'] ."</td>
 						<td>" . $b['prazo_dias']. " dias </td>
 						<td>" . inverteData($dn) ."</td>
-						<td> <a href='projeto/atualizar.php?id=". $b['id_projeto'] ."'>Atualizar Projeto </a></td>
+						<td class=' green darken-1 center' style='color: white'>1234aa</td>
+						<td class='center'> <a href='projeto/atualizar.php?id=". $b['id_projeto'] ."'>Atualizar Projeto </a></td>		
 						</tr>
 
 						";
