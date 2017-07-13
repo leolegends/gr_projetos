@@ -16,7 +16,25 @@ extract($_REQUEST);
 	
   }
 
+
+
 $obj = new Controller($hoje_insert);
+
+if($token){
+	$r = VerificaToken($conexao, $token);
+	if (mysqli_num_rows($r) == 0) {	
+
+		echo "<script>
+		window.alert('Seu acesso foi sem parametro.');
+		top.location='../index.php'
+
+		</script>";
+		die;
+
+	}
+
+
+}
 
 $id;
 

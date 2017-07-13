@@ -19,7 +19,7 @@ $token = GeraHash(10);
 echo $token;
 		$t = $obj->VerificaToken($conexao, $token);
 
-		if (!$t == 0){
+		if (!(mysqli_num_rows($t) == 0)){
 			$token = GeraHash(10);
 		}
 

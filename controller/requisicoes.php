@@ -67,9 +67,8 @@
 
 			"
 			);
-		$q = mysqli_num_rows($query);
-		
-		return $q;
+
+		return $query;
 	}
 
 	public static function VisualizaProjeto($conexao, $id){
