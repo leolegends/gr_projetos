@@ -22,21 +22,21 @@ $obj = new Controller($hoje_insert);
 
 
 if($token){
-	$r = VerificaToken($conexao, $token);
+	$r = $obj->VerificaToken($conexao, $token);
 	if (mysqli_num_rows($r) == 0) {	
 
 		echo "<script>
-		window.alert('Seu acesso foi sem parametro.');
+		window.alert('Token Invalido!');
 		top.location='../index.php'
 
 		</script>";
 		die;
 
-	}else{
+	}
 		while($ar = mysqli_fetch_array($r)){
 			$id = $ar['id_projeto'];
 		}
-	}
+
 
 
 }

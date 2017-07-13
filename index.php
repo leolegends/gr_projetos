@@ -16,7 +16,6 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 
 $token = GeraHash(10);
 
-echo $token;
 		$t = $obj->VerificaToken($conexao, $token);
 
 		if (!(mysqli_num_rows($t) == 0)){
@@ -66,6 +65,7 @@ echo $token;
 			<div class="row">
 				<div class="col m12 center cadastro_title">
 					<h2 id="title_cadastro">Cadastro de Projetos <i style="font-size: 50px;"class="material-icons">bubble_chart</i></h2>
+					<p><a href='projeto/index.php'>Acesso por Token</a></p>
 				</div>
 			</div>
 		<div class="container altura_div">
