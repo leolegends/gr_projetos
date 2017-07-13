@@ -33,7 +33,7 @@
 		$query = mysqli_query($conexao, "
 		insert into projeto (projeto, responsavel, solicitante, prazo_dias, projeto_status, 
 		iniciado, analise, desenvolvendo, corrigindo, aprovado, entregue, pausar_projeto,
-		data_inicio, data_iniciado) value (
+		data_inicio, data_iniciado, token) value (
 		\"$pj_nome\",\"$pj_responsavel\", \"$pj_solicitante\", 
 		$pj_prazo, 1, 1, 0, 0, 0, 0, 0, 0, 
 		\"$pj_inicio\",\"$pj_inicio\",\"$token\"

@@ -16,6 +16,7 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 
 $token = GeraHash(10);
 
+echo $token;
 		$t = $obj->VerificaToken($conexao, $token);
 
 		if (!$t == 0){
