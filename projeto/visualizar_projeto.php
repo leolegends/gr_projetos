@@ -20,6 +20,7 @@ extract($_REQUEST);
 
 $obj = new Controller($hoje_insert);
 
+
 if($token){
 	$r = VerificaToken($conexao, $token);
 	if (mysqli_num_rows($r) == 0) {	
@@ -31,6 +32,10 @@ if($token){
 		</script>";
 		die;
 
+	}else{
+		while($ar = mysqli_fetch_array($r)){
+			$id = $ar['id_projeto'];
+		}
 	}
 
 
