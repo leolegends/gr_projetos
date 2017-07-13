@@ -12,17 +12,26 @@
 	</head>
 		<body>
 			<div class='center'>
-
 				<div class="row container">
 					<form method="post" action="index.php">
 					<div class="col m12">
-					<label style='font-size: 50px;'>TOKEN <i class="material-icons" style='font-size: 50px;'>fingerprint</i></label>
-					<input type='password' name='token' style='height: 4cm; font-size: 50px; text-align: center;' maxlength="5">
+					<label style='font-size: 60px;'>TOKEN</label>
+					<input type='password' name='token' style='height: 4cm; font-size: 50px; text-align: center;' required>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col m12 center">
-						<button class='btn green darken-4' style='color: white'>Verificar Token</button>
+					<div class="col m12 s12 center">
+						<i class="material-icons" style='font-size: 60px; color: #1976d2;' class='pulse'>fingerprint</i>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12 s12 center">
+						<button class='btn  cyan darken-4' style='color: white'>Verificar Token</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12 s12">
+					<p><b>Utilize o seu código de Acesso ao Projeto.</b></p>
 					</div>
 				</div>
 				</form>

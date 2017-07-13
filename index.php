@@ -2,6 +2,8 @@
 
 require_once ('controller/autoload.php');
 
+require_once('functions/gera_token.php');
+
 $hoje = date('d') . "/" .date('m') . "/" . date('Y');
 $hoje_insert = date('Y') . "-" . date('m') . "-" . date('d');
 
@@ -12,6 +14,15 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 
 	if($start == "start"){
 
+$token = GeraHash(10);
+
+		$t = $obj->VerificaToken($conexao, $token);
+
+		if (!$t == 0){
+			$token = GeraHash(10);
+		}
+
+
 	$obj->IniciaProjeto(
 
 		$conexao, 
@@ -19,7 +30,8 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 		$responsavel, 
 		$solicitante, 
 		$prazo, 
-		$hoje_insert
+		$hoje_insert,
+		$token
 		);
 
 		echo "<div id='cadastrado'><center><h4 id='esconde'>Projeto: ".$name ." cadastrado com sucesso!</h4></center></div>";
@@ -155,7 +167,7 @@ $obj = new Controller($name, $responsavel, $solicitante, $prazo, $hoje_insert);
 						<td>". $b['responsavel'] ."</td>
 						<td>" . $b['prazo_dias']. " dias </td>
 						<td>" . inverteData($dn) ."</td>
-						<td class=' green darken-1 center' style='color: white'>1234aa</td>
+						<td class=' green darken-1 center' style='color: white'> ".  $b['token'] ."</td>
 						<td class='center'> <a href='projeto/atualizar.php?id=". $b['id_projeto'] ."'>Atualizar Projeto </a></td>		
 						</tr>
 

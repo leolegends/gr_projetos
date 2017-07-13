@@ -27,7 +27,7 @@
 		
 	}
 
-	public function IniciaProjeto($conexao,$pj_nome, $pj_responsavel, $pj_solicitante, $pj_prazo, $pj_inicio){
+	public function IniciaProjeto($conexao,$pj_nome, $pj_responsavel, $pj_solicitante, $pj_prazo, $pj_inicio, $token){
 
 
 		$query = mysqli_query($conexao, "
@@ -36,7 +36,7 @@
 		data_inicio, data_iniciado) value (
 		\"$pj_nome\",\"$pj_responsavel\", \"$pj_solicitante\", 
 		$pj_prazo, 1, 1, 0, 0, 0, 0, 0, 0, 
-		\"$pj_inicio\",\"$pj_inicio\"
+		\"$pj_inicio\",\"$pj_inicio\",\"$token\"
 		);
 
 		");
@@ -48,7 +48,7 @@
 	public function RetornaProjetos($conexao,$pj_busca){
 		$query = mysqli_query($conexao, "
 
-			select id_projeto, projeto, responsavel, prazo_dias, data_inicio from projeto
+			select id_projeto, projeto, responsavel, prazo_dias, data_inicio, token from projeto
 			where projeto like '%$pj_busca%'
 
 			order by data_inicio desc
@@ -58,6 +58,19 @@
 		return $query;
 	}
 
+	public function VerificaToken($conexao,$token){
+		
+		$query = mysqli_query($conexao, "
+
+			select id_projeto from projeto
+			where token = '$token'
+
+			"
+			);
+		$q = mysqli_num_rows($query);
+		
+		return $q;
+	}
 
 	public static function VisualizaProjeto($conexao, $id){
 		$query = mysqli_query($conexao, "
