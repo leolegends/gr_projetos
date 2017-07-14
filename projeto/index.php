@@ -16,7 +16,7 @@
 					<form method="post" action="visualizar_projeto.php">
 					<div class="col m12">
 					<label style='font-size: 60px;'>TOKEN</label>
-					<input type='password' name='token' style='height: 4cm; font-size: 50px; text-align: center;' required>
+					<input type='text' name='token' style='height: 4cm; font-size: 50px; text-align: center; color:#757575;' maxlength='10' required>
 					</div>
 				</div>
 				<div class="row">
