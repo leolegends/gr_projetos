@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.18, for Linux (x86_64)
 --
--- Host: 150.179.23.8    Database: projetos
+-- Host: localhost    Database: projetos
 -- ------------------------------------------------------
 -- Server version	5.7.18-0ubuntu0.16.04.1
 
@@ -30,7 +30,7 @@ CREATE TABLE `comentarios` (
   `status_comentario` text,
   `data` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,8 +71,9 @@ CREATE TABLE `projeto` (
   `data_corrigindo` date DEFAULT NULL,
   `data_aprovado` date DEFAULT NULL,
   `data_entregue` date DEFAULT NULL,
+  `token` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id_projeto`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-10 14:24:50
+-- Dump completed on 2017-07-17 21:22:13
